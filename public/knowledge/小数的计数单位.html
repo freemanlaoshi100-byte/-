@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小数的计数单位 - 小学生数学知识点精讲</title>
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-hover: #43a047;
+      --primary-light: #e8f5e9;
+      --sky: #0284c7;
+      --sky-light: #e0f2fe;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --slate-dark: #1e293b;
+      --slate-body: #334155;
+      --slate-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f0fdf4 0%, #f8fafc 160px);
+      color: var(--slate-body);
+      line-height: 1.6;
+      padding: 24px 20px 48px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .header-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 20px -2px rgba(76, 175, 80, 0.08);
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4caf50, #0284c7);
+    }
+    .badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--slate-muted);
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .badge-tag {
+      background: var(--primary-light);
+      color: #2e7d32;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+    }
+    .badge-grade {
+      background: var(--sky-light);
+      color: var(--sky);
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      color: var(--slate-dark);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .summary-text {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.7;
+    }
+    .action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: #4caf50;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: #ffffff;
+      border-color: var(--border);
+      color: var(--slate-body);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rule-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 15px;
+      color: #166534;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .mnemonic-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #92400e;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .example-q {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--sky);
+      font-size: 14.5px;
+      color: #1e293b;
+    }
+    .example-a {
+      font-size: 14px;
+      color: #334155;
+      white-space: pre-line;
+      line-height: 1.8;
+      background: #fcfcfc;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+    }
+    .quiz-container {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .quiz-q {
+      font-size: 15px;
+      font-weight: 600;
+      color: #581c87;
+      margin-bottom: 12px;
+    }
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed #d8b4fe;
+      animation: fadeIn 0.3s ease;
+    }
+    .answer-panel.show {
+      display: block;
+    }
+    .answer-text {
+      color: #15803d;
+      font-weight: 700;
+      font-size: 14.5px;
+      margin-bottom: 6px;
+    }
+    .analysis-text {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .tip-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-card">
+      <div class="badge-bar">
+        <span class="badge-tag">数与代数</span>
+        <span>/</span>
+        <span>小数</span>
+        <span class="badge-grade">三年级下册</span>
+      </div>
+      <h1>
+        <span>小数的计数单位</span>
+      </h1>
+      <p class="summary-text">小数的计数单位拓展了数的范围，让我们可以精准表示不足1或按比例分配的量。掌握分母、分子、约分、通分以及小数与分数的互化是小学高年级的关键跨越。</p>
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="markLearned()">
+          <span>✓</span> 标记为已学好
+        </button>
+        <button class="btn btn-outline" onclick="speakText()">
+          <span>🔊</span> 听语音精讲
+        </button>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="card-title">
+        <span>📐 核心公式与法则</span>
+      </div>
+      <div class="rule-box">
+        分数的基本性质：分数的分子和分母同时乘或除以相同的数(0除外)，分数的大小不变。
+      </div>
+      
+      <div class="mnemonic-box">
+        <span>💡 <b>学霸口诀：</b></span>
+        <span>把单位“1”平均分，分母在下分子上；约分化简找公因，通分相加母相同！</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📖 分数与实际意义</span>
+      </div>
+      <div class="example-q">
+        <b>【例题】</b>一根绳子长5米，平均剪成8段，每段长多少米？每段占这根绳子的几分之几？
+      </div>
+      <div class="example-a">
+        <b>【详细解析与答题】：</b>
+        每段长度表示具体数量：5 ÷ 8 = 5/8(米)；每段占整根绳子的分率：1 ÷ 8 = 1/8。注意：带单位是具体长度，不带单位是分率！
+      </div>
+    </div>
+
+    <div class="card quiz-container">
+      <div class="card-title" style="color: #6b21a8;">
+        <span>🎯 动动脑·随堂小测</span>
+      </div>
+      <div class="quiz-q">
+        <b>【自测题】</b>把 0.75 化成分数，把 3/5 化成小数和百分数。
+      </div>
+      <button class="btn btn-outline" style="background:#ffffff; color:#6b21a8; border-color:#d8b4fe;" onclick="toggleAnswer()">
+        <span id="btnText">👀 查看参考答案与思路</span>
+      </button>
+      <div class="answer-panel" id="answerPanel">
+        <div class="answer-text">✅ 参考答案：0.75 = 3/4；3/5 = 0.6 = 60%。</div>
+        <div class="analysis-text"><b>思路剖析：</b>0.75 = 75/100 = 3/4；3/5 = 3 ÷ 5 = 0.6 = 60%。</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span>💡</span>
+      <span><b>名师支招：</b>特别区分“分率”与“具体量”，多结合数轴或圆形披萨分块图建立直观模型。</span>
+    </div>
+
+    <div class="footer-note">
+      小学数学全景知识图谱 · 知识点文件：./knowledge/%E5%B0%8F%E6%95%B0%E7%9A%84%E8%AE%A1%E6%95%B0%E5%8D%95%E4%BD%8D.html
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer() {
+      const panel = document.getElementById('answerPanel');
+      const btnText = document.getElementById('btnText');
+      if (panel.classList.contains('show')) {
+        panel.classList.remove('show');
+        btnText.innerText = '👀 查看参考答案与思路';
+      } else {
+        panel.classList.add('show');
+        btnText.innerText = '🙈 隐藏答案与解析';
+      }
+    }
+
+    function markLearned() {
+      // 向父级 React 窗口发送同步消息
+      try {
+        window.parent.postMessage({
+          type: 'TOGGLE_LEARNED_FROM_IFRAME',
+          name: '小数的计数单位',
+          id: 'math_61_%E5%B0%8F%E6%95%B0%E7%9A%84%E8%AE%A1%E6%95%B0%E5%8D%95%E4%BD%8D'
+        }, '*');
+      } catch (e) {
+        console.error(e);
+      }
+      alert('已成功向主程序同步：已掌握【小数的计数单位】！');
+    }
+
+    function speakText() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = "小数的计数单位。小数的计数单位拓展了数的范围，让我们可以精准表示不足1或按比例分配的量。掌握分母、分子、约分、通分以及小数与分数的互化是小学高年级的关键跨越。。核心要点：分数的基本性质：分数的分子和分母同时乘或除以相同的数(0除外)，分数的大小不变。";
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'zh-CN';
+        utter.rate = 0.95;
+        window.speechSynthesis.speak(utter);
+      } else {
+        alert('抱歉，当前浏览器不支持语音朗读功能。');
+      }
+    }
+  </script>
+</body>
+</html>

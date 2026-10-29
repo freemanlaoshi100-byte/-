@@ -1,0 +1,6 @@
+{
+  "name": "小学生数学知识点",
+  "description": "专为小学生量身打造的数学全景知识图谱与提前学导航应用，涵盖数与代数、图形与几何、统计与概率、综合与实践四大模块，支持三级大纲折叠、进度追踪与课表导出。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

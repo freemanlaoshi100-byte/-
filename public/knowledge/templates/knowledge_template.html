@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识点名称 - 小学生数学知识点精讲</title>
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-hover: #43a047;
+      --primary-light: #e8f5e9;
+      --sky: #0284c7;
+      --sky-light: #e0f2fe;
+      --slate-dark: #1e293b;
+      --slate-body: #334155;
+      --slate-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f0fdf4 0%, #f8fafc 160px);
+      color: var(--slate-body);
+      line-height: 1.6;
+      padding: 24px 20px 48px;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
+    .header-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 20px -2px rgba(76, 175, 80, 0.08);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .header-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, #4caf50, #0284c7);
+    }
+    .badge-bar { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--slate-muted); margin-bottom: 10px; }
+    .badge-tag { background: var(--primary-light); color: #2e7d32; font-weight: 600; padding: 3px 10px; border-radius: 9999px; font-size: 12px; }
+    .badge-grade { background: var(--sky-light); color: var(--sky); font-weight: 600; padding: 3px 10px; border-radius: 9999px; font-size: 12px; }
+    h1 { font-size: 26px; color: var(--slate-dark); font-weight: 700; margin-bottom: 12px; }
+    .summary-text { font-size: 15px; color: #475569; line-height: 1.7; }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .card-title { font-size: 16px; font-weight: 700; color: var(--slate-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .rule-box {
+      background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 14px; padding: 16px 18px; font-size: 15px; color: #166534; font-weight: 600;
+    }
+    .example-q { background: #f8fafc; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; border-left: 4px solid var(--sky); font-size: 14.5px; }
+    .example-a { background: #fcfcfc; padding: 12px 16px; border-radius: 12px; border: 1px dashed var(--border); font-size: 14px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 12px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background: #4caf50; color: #ffffff; }
+    .btn-outline { background: #ffffff; border-color: var(--border); color: var(--slate-body); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-card">
+      <div class="badge-bar">
+        <span class="badge-tag">模块分类</span>
+        <span>/</span>
+        <span>子分类</span>
+        <span class="badge-grade">适用年级</span>
+      </div>
+      <h1>此处填写知识点名称</h1>
+      <p class="summary-text">此处填写该知识点的概念简介、学习目标与在生活中的实际意义...</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span>📐 核心公式与概念法则</span></div>
+      <div class="rule-box">
+        此处填写公式、定律或运算步骤...
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span>📖 经典例题与思路剖析</span></div>
+      <div class="example-q"><b>【例题】</b>此处输入典型例题题目描述...</div>
+      <div class="example-a"><b>【解答与思路】：</b>此处分步骤写出解答过程...</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span>🎯 随堂自测练习</span></div>
+      <p style="margin-bottom: 12px;">此处输入自测练习题...</p>
+      <button class="btn btn-outline" onclick="alert('参考答案：请对照例题解答步骤自查！')">查看参考答案</button>
+    </div>
+  </div>
+</body>
+</html>

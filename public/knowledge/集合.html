@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>集合 - 小学生数学知识点精讲</title>
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-hover: #43a047;
+      --primary-light: #e8f5e9;
+      --sky: #0284c7;
+      --sky-light: #e0f2fe;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --slate-dark: #1e293b;
+      --slate-body: #334155;
+      --slate-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f0fdf4 0%, #f8fafc 160px);
+      color: var(--slate-body);
+      line-height: 1.6;
+      padding: 24px 20px 48px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .header-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 20px -2px rgba(76, 175, 80, 0.08);
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4caf50, #0284c7);
+    }
+    .badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--slate-muted);
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .badge-tag {
+      background: var(--primary-light);
+      color: #2e7d32;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+    }
+    .badge-grade {
+      background: var(--sky-light);
+      color: var(--sky);
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      color: var(--slate-dark);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .summary-text {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.7;
+    }
+    .action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: #4caf50;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: #ffffff;
+      border-color: var(--border);
+      color: var(--slate-body);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rule-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 15px;
+      color: #166534;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .mnemonic-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #92400e;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .example-q {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--sky);
+      font-size: 14.5px;
+      color: #1e293b;
+    }
+    .example-a {
+      font-size: 14px;
+      color: #334155;
+      white-space: pre-line;
+      line-height: 1.8;
+      background: #fcfcfc;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+    }
+    .quiz-container {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .quiz-q {
+      font-size: 15px;
+      font-weight: 600;
+      color: #581c87;
+      margin-bottom: 12px;
+    }
+    .answer-panel {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed #d8b4fe;
+      animation: fadeIn 0.3s ease;
+    }
+    .answer-panel.show {
+      display: block;
+    }
+    .answer-text {
+      color: #15803d;
+      font-weight: 700;
+      font-size: 14.5px;
+      margin-bottom: 6px;
+    }
+    .analysis-text {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .tip-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-card">
+      <div class="badge-bar">
+        <span class="badge-tag">综合与实践</span>
+        <span>/</span>
+        <span>数学广角</span>
+        <span class="badge-grade">三年级上册</span>
+      </div>
+      <h1>
+        <span>集合</span>
+      </h1>
+      <p class="summary-text">【集合】是小学数学综合与实践模块（数学广角）中的重要知识点，对应三年级上册的学习阶段。重点考察学生的逻辑推导、数感建立与综合解决实际问题的能力。</p>
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="markLearned()">
+          <span>✓</span> 标记为已学好
+        </button>
+        <button class="btn btn-outline" onclick="speakText()">
+          <span>🔊</span> 听语音精讲
+        </button>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="card-title">
+        <span>📐 核心公式与法则</span>
+      </div>
+      <div class="rule-box">
+        掌握【集合】的基础概念，熟记基本计算法则与推理步骤，学会画线段图或图表分析数量关系。
+      </div>
+      
+      <div class="mnemonic-box">
+        <span>💡 <b>学霸口诀：</b></span>
+        <span>审题要仔细，画图明关系；列式算准确，检验不漏题！</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📖 典型考题与解析</span>
+      </div>
+      <div class="example-q">
+        <b>【例题】</b>请根据【集合】的核心要求，结合题目中的已知条件，列式计算并写出解题思考过程。
+      </div>
+      <div class="example-a">
+        <b>【详细解析与答题】：</b>
+        解题步骤：
+1. 仔细阅读题目，提取关键数字与单位；
+2. 运用“数学广角”的计算法则确定运算顺序或几何公式；
+3. 仔细运算并在草稿本上核对检验；
+4. 写出规范的“答语”。
+      </div>
+    </div>
+
+    <div class="card quiz-container">
+      <div class="card-title" style="color: #6b21a8;">
+        <span>🎯 动动脑·随堂小测</span>
+      </div>
+      <div class="quiz-q">
+        <b>【自测题】</b>针对【集合】进行自测：在练习本上尝试写出一个与此知识点相关的实际生活案例并解答。
+      </div>
+      <button class="btn btn-outline" style="background:#ffffff; color:#6b21a8; border-color:#d8b4fe;" onclick="toggleAnswer()">
+        <span id="btnText">👀 查看参考答案与思路</span>
+      </button>
+      <div class="answer-panel" id="answerPanel">
+        <div class="answer-text">✅ 参考答案：答案与思考：请对照例题解题步骤，检查单位换算与计算准确度。</div>
+        <div class="analysis-text"><b>思路剖析：</b>数学来源于生活，将数学知识点还原到生活场景（如购物、排队、测量、统计）中，能更快加深理解！</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span>💡</span>
+      <span><b>名师支招：</b>建议结合教材相应课本例题进行跟练，配合课后习题巩固强化，不懂随时回看知识点！</span>
+    </div>
+
+    <div class="footer-note">
+      小学数学全景知识图谱 · 知识点文件：./knowledge/%E9%9B%86%E5%90%88.html
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer() {
+      const panel = document.getElementById('answerPanel');
+      const btnText = document.getElementById('btnText');
+      if (panel.classList.contains('show')) {
+        panel.classList.remove('show');
+        btnText.innerText = '👀 查看参考答案与思路';
+      } else {
+        panel.classList.add('show');
+        btnText.innerText = '🙈 隐藏答案与解析';
+      }
+    }
+
+    function markLearned() {
+      // 向父级 React 窗口发送同步消息
+      try {
+        window.parent.postMessage({
+          type: 'TOGGLE_LEARNED_FROM_IFRAME',
+          name: '集合',
+          id: 'math_180_%E9%9B%86%E5%90%88'
+        }, '*');
+      } catch (e) {
+        console.error(e);
+      }
+      alert('已成功向主程序同步：已掌握【集合】！');
+    }
+
+    function speakText() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = "集合。【集合】是小学数学综合与实践模块（数学广角）中的重要知识点，对应三年级上册的学习阶段。重点考察学生的逻辑推导、数感建立与综合解决实际问题的能力。。核心要点：掌握【集合】的基础概念，熟记基本计算法则与推理步骤，学会画线段图或图表分析数量关系。";
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'zh-CN';
+        utter.rate = 0.95;
+        window.speechSynthesis.speak(utter);
+      } else {
+        alert('抱歉，当前浏览器不支持语音朗读功能。');
+      }
+    }
+  </script>
+</body>
+</html>
